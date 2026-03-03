@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jayaramamoorthi - Digital Resume</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            scroll-behavior: smooth;
+        }
+        .navbar {
+            transition: all 0.3s ease;
+        }
+        .progress {
+            height: 1.5rem;
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top shadow">
+        <div class="container">
+            <a class="navbar-brand" href="#home">Digital Resume</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#bio">Bio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#experience">Experience</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div id="bio" class="container py-5">
+        <div class="row align-items-center mb-5">
+            <div class="col-md-8">
+                <h1 class="display-4 fw-bold">Hi, I'm Jayaramamoorthi</h1>
+                <p class="lead text-muted">
+                    Software developer with thorough hands-on experience of 9.7 years. 
+                    Skilled in all phases of the software development life-cycle; expert in 
+                    translating business requirements into technical solutions; and fanatical 
+                    about quality, usability, security and scalability.
+                </p>
+            </div>
+        </div>
+
+        <section id="education" class="py-4">
+            <h3 class="mb-4 text-secondary border-bottom pb-2">Educational Qualifications</h3>
+            <div class="card h-100 text-center shadow-sm">
+                <div class="card-body">
+                    <h5 class="card-title">MASTER OF COMPUTER APPLICATIONS</h5>
+                    <p class="card-text">Bannari Amman Institute of Technology | 2012 - 2015</p>
+                    <span class="badge rounded-pill bg-primary">CGPA: 7.63</span>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <div id="skills" class="container py-5">
+        <h2 class="text-center mb-4">Technical Skill Set</h2>
+        <div class="row">
+            <div class="col-md-6">
+                <h5>Library</h5>
+                <div class="mb-3">
+                    <div class="d-flex justify-content-between"><span>React Js</span><span>80%</span></div>
+                    <div class="progress">
+                        <div class="progress-bar progress-bar-striped progress-bar-animated bg-info" style="width: 80%"></div>
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <div class="d-flex justify-content-between"><span>JavaScript</span><span>70%</span></div>
+                    <div class="progress">
+                        <div class="progress-bar progress-bar-striped progress-bar-animated bg-secondary" style="width: 70%"></div>
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <div class="d-flex justify-content-between"><span>Hooks</span><span>60%</span></div>
+                    <div class="progress">
+                        <div class="progress-bar progress-bar-striped progress-bar-animated bg-success" style="width: 60%"></div>
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <div class="d-flex justify-content-between"><span>Redux</span><span>50%</span></div>
+                    <div class="progress">
+                        <div class="progress-bar progress-bar-striped progress-bar-animated bg-primary" style="width: 50%"></div>
+                    </div>
+                </div>
+
+                <h5 class="mt-4">Framework</h5>
+                <div class="mb-3">
+                    <div class="d-flex justify-content-between"><span>Entity Framework</span><span>65%</span></div>
+                    <div class="progress">
+                        <div class="progress-bar progress-bar-striped progress-bar-animated bg-dark" style="width: 65%"></div>
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <div class="d-flex justify-content-between"><span>MicroService</span><span>55%</span></div>
+                    <div class="progress">
+                        <div class="progress-bar progress-bar-striped progress-bar-animated bg-secondary" style="width: 55%"></div>
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <div class="d-flex justify-content-between"><span>WebApi</span><span>45%</span></div>
+                    <div class="progress">
+                        <div class="progress-bar progress-bar-striped progress-bar-animated bg-info" style="width: 45%"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <h5>Tools Handled</h5>
+                <div class="d-flex flex-wrap gap-2">
+                    <span class="badge rounded-pill bg-warning text-dark p-2">Visual Studio</span>
+                    <span class="badge rounded-pill bg-warning text-dark p-2">Visual Studio Code</span>
+                    <span class="badge rounded-pill bg-warning text-dark p-2">Gitlab</span>
+                    <span class="badge rounded-pill bg-warning text-dark p-2">Jira</span>
+                    <span class="badge rounded-pill bg-warning text-dark p-2">Jenkins</span>
+                    <span class="badge rounded-pill bg-warning text-dark p-2">Winscp</span>
+                    <span class="badge rounded-pill bg-warning text-dark p-2">Bird Report Server</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="experience" class="container py-5">
+        <h2 class="text-center mb-4">Professional Experience</h2>
+        <div class="accordion accordion-flush shadow-sm" id="experienceAccordion">
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#exp1">
+                        Senior Frontend Developer - TVS Supplier Chain Solutions (2022-Present)
+                    </button>
+                </h2>
+                <div id="exp1" class="accordion-collapse collapse show" data-bs-parent="#experienceAccordion">
+                    <div class="accordion-body">
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">Developed responsive SPAs using React Material UI.</li>
+                            <li class="list-group-item">Optimized product performance.</li>
+                            <li class="list-group-item">Handling defects, production bugs, and user stories.</li>
+                            <li class="list-group-item">Managed a team of 3 junior developers.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#exp2">
+                        Junior FullStack Developer - Angler Technologies Pvt Ltd (2016-2019)
+                    </button>
+                </h2>
+                <div id="exp2" class="accordion-collapse collapse" data-bs-parent="#experienceAccordion">
+                    <div class="accordion-body">
+                        <ul>
+                            <li>Developed MVC application using HTML, CSS, JavaScript, and Bootstrap responsive design.</li>
+                            <li>Provide RESTful API services to support web portal and mobile device integrations.</li>
+                            <li>Production deployment support.</li>
+                            <li>Optimization of complex logics and stored procedures.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="contact" class="container py-5">
+        <hr class="my-5" />
+        <h2 class="text-center mb-4">Contact Me</h2>
+        <div class="row justify-content-center">
+            <div class="col-md-8 col-lg-6">
+                <form>
+                    <div class="row mb-3">
+                        <div class="col">
+                            <label class="form-label">Mobile No</label>
+                            <input type="text" class="form-control" value="9092532004" readonly>
+                        </div>
+                        <div class="col">
+                            <label class="form-label">Email</label>
+                            <input type="email" class="form-control" value="jayaram8016@gmail.com" readonly>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
