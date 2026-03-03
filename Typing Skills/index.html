@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bootstrap Incrementing Timer</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="bg-dark d-flex align-items-center vh-100">
+
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-5">
+            <div class="card border-0 shadow-lg card-body p-5 text-center">
+              <div class="p-4 border rounded bg-white shadow-sm">
+                <h6 class="text-muted mb-3">Current Time</h6>
+                
+                <label id="timeLabel" class="display-6 fw-bold text-primary">
+                   
+                </label>
+                
+
+            </div>
+                <div class="card-body p-5 text-center">
+                    <label class="form-label fw-bold mb-3">Click to start counting</label>
+                     <input type="text" 
+                           id="timerDisplay" 
+                           class="form-control form-control-lg text-center fw-mono" 
+                           placeholder="00:00:00" 
+                           readonly 
+                           style="font-family: monospace; font-size: 2rem;">
+                           <br />
+                    <input type="text" 
+                           id="timerDisplay1" 
+                           class="form-control form-control-lg text-center fw-mono" 
+                          
+                           style="font-family: monospace; font-size: 2rem;">
+                    
+                    <button class="btn btn-outline-danger btn-sm mt-4" onclick="location.reload()">Reset Timer</button>
+                </div>
+    
+  <div class="stats">
+    <p>Words: <span id="wordCount">0</span></p>
+    <p>Sentences: <span id="sentenceCount">0</span></p>
+    <p>Characters: <span id="charCount">0</span></p>
+  <div>
+</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    const display = document.getElementById('timerDisplay1');
+     const timer = document.getElementById('timerDisplay');
+const wordCount = document.getElementById('wordCount');
+const sentenceCount = document.getElementById('sentenceCount');
+const charCount = document.getElementById('charCount');
+    let secondsElapsed = 0;
+    let timerInterval = null;
+
+    function formatTime(totalSeconds) {
+        const hrs = Math.floor(totalSeconds / 3600).toString().padStart(2, '0');
+        const mins = Math.floor((totalSeconds % 3600) / 60).toString().padStart(2, '0');
+        const secs = (totalSeconds % 60).toString().padStart(2, '0');
+        return `${hrs}:${mins}:${secs}`;
+    }
+
+    display.addEventListener('focus', function() {
+        // Prevent multiple timers if clicked twice
+        if (timerInterval) return;
+
+        timerInterval = setInterval(() => {
+            secondsElapsed++; // Increment by 1
+            //display.value = formatTime(secondsElapsed);
+            timer.value=formatTime(secondsElapsed);
+        }, 1000);
+
+        // Visual feedback
+        this.classList.replace('border-secondary', 'border-success');
+    });
+    
+  display.addEventListener('input', () => {
+  const value = display.value.trim();
+
+  // 1. Character Count (including spaces)
+  charCount.innerText = value.length;
+
+  // 2. Word Count
+  // Matches any sequence of non-whitespace characters
+  const words = value.split(/\s+/).filter(item => item.length > 0);
+  wordCount.innerText = words.length;
+
+  // 3. Sentence Count
+  // Splits by periods, exclamation marks, or question marks
+  const sentences = value.split(/[.!?]+/).filter(item => item.trim().length > 0);
+  sentenceCount.innerText = sentences.length;
+});
+    
+    function updateClock() {
+        const now = new Date();
+        
+        // Get Hours, Minutes, and Seconds
+        let hours = now.getHours();
+        const minutes = now.getMinutes().toString().padStart(2, '0');
+        const seconds = now.getSeconds().toString().padStart(2, '0');
+        
+        // Determine AM or PM
+        const ampm = hours >= 12 ? 'PM' : 'AM';
+        
+        // Convert to 12-hour format
+        hours = hours % 12;
+        hours = hours ? hours : 12; // the hour '0' should be '12'
+        const hoursStr = hours.toString().padStart(2, '0');
+
+        // Format: HH-MM-SS AM
+        const formattedTime = `${hoursStr}:${minutes}:${seconds} ${ampm}`;
+        
+        // Binding the value to the label
+        document.getElementById('timeLabel').innerText = formattedTime;
+    }
+
+    // Run once immediately, then every second
+    updateClock();
+    setInterval(updateClock, 1000);
+</script>
+
+</body>
+</html>
